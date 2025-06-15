@@ -1,4 +1,4 @@
-from apps.auth.views import register, login
+from apps.auth.views import register, login, logout
 from apps.products import admin_views
 from apps.products import user_views
 from apps.orders import admin_views
@@ -113,4 +113,5 @@ def user_menu():
 
 
 if __name__ == "__main__":
+    logout()
     auth_menu()
