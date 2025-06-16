@@ -1,9 +1,8 @@
-from apps.auth.views import register, login, logout
-from apps.products import admin_views
-from apps.products import user_views
-from apps.orders import admin_views
-from apps.orders import user_views
-from apps.auth import views
+from apps.auth.views import register, login, logout, show_all_users
+from apps.products.admin_views import *
+from apps.products.user_views import *
+from apps.orders.admin_views import *
+from apps.orders.user_views import *
 
 
 def auth_menu():
@@ -64,17 +63,17 @@ def admin_menu():
     choice = input("Enter your choice: ")
     
     if choice == "1":
-        admin_views.add_product()
+        add_product()
     elif choice == "2":
-        admin_views.delete_product()
+        delete_product()
     elif choice == "3":
-        user_views.show_products()
+        show_products()
     elif choice == "4":
-        admin_views.show_all_orders()
+        show_all_orders()
     elif choice == "5":
-        views.show_all_users()
+        show_all_users()
     elif choice == "6":
-        views.logout()
+        logout()
     else:
         print("Invalid choice")
     return admin_menu()
@@ -100,13 +99,13 @@ def user_menu():
     choice = input("Enter your choice: ")
     
     if choice == "1":
-        user_views.show_products()
+        show_products()
     elif choice == "2":
-        user_views.order_product()
+        order_product()
     elif choice == "3":
-        user_views.show_my_orders()
+        show_my_orders()
     elif choice == "4":
-        views.logout()
+        logout()
     else:
         print("Invalid choice")
     return user_menu()
